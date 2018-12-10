@@ -168,8 +168,7 @@ def calc_set(a, b, c, d, e='', f='', g='', h='', i='', j='', k='', l=''):
     for solved_word in itertools.permutations(word):
         solutions.append(''.join(solved_word))
 
-    solutions_set = set(solutions)
-    solutions = list(solutions_set)
+    solutions = set(solutions)
 
     final_solutions = []
     found_flag = False
