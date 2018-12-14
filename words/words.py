@@ -186,10 +186,10 @@ def calc_set(a, b, c, d, e='', f='', g='', h='', i='', j='', k='', l=''):
 
     solutions = set(solutions)
 
-    print(len(solutions_set))
+    print(len(solutions))
     final_solutions = set()
     found_flag = False
-    for i, solution in enumerate(solutions_set):
+    for i, solution in enumerate(solutions):
         if solution in german_words_set:
             found_flag = True
             final_solutions.add(solution)
