@@ -8,6 +8,22 @@ with open('deutsch.txt', 'r') as file:
     german_words_np = np.asarray(german_words)
     german_words_set = set(german_words)
 
+with open('top10000de.txt', 'r') as file:
+    german_words2= [line.strip().upper() for line in file]
+
+    german_words_np2 = np.asarray(german_words2)
+    german_words_set2 = set(german_words2)
+
+with open('wortliste.txt', 'r') as file:
+    german_words3= [line.strip().upper() for line in file]
+
+    german_words_np3 = np.asarray(german_words3)
+    german_words_set3 = set(german_words3)
+
+print("deutsch.txt // evaluates " + str(len(german_words_set)) + " words")
+print("top10000.txt // evaluates " + str(len(german_words_set2)) + " words")
+print("wortliste.txt // evaluates " + str(len(german_words_set3)) + " words")
+
 def calc(a, b, c, d, e='', f='', g='', h='', i='', j='', k='', l=''):
     word = [a, b, c, d]
     if e != '':
@@ -164,26 +180,35 @@ def calc_set(a, b, c, d, e='', f='', g='', h='', i='', j='', k='', l=''):
     if l != '':
         word.append(l)
 
-    solutions = []
+    solutions = set()
     for solved_word in itertools.permutations(word):
-        solutions.append(''.join(solved_word))
+        solutions.add(''.join(solved_word))
 
     solutions = set(solutions)
 
-    final_solutions = []
+    print(len(solutions_set))
+    final_solutions = set()
     found_flag = False
-    for i, solution in enumerate(solutions):
+    for i, solution in enumerate(solutions_set):
         if solution in german_words_set:
             found_flag = True
-            final_solutions.append(solution)
+            final_solutions.add(solution)
+        if solution in german_words_set2:
+            found_flag = True
+            final_solutions.add(solution)
+        if solution in german_words_set3:
+            found_flag = True
+            final_solutions.add(solution)
         #if i%100 == 0:
             #print("Check word "+str(i)+" of "+str(len(solutions))+"\r")
 
     if found_flag == True:
         print("\n" + "Finished Search successfully")
         print(final_solutions)
+        print("----------------------------")
     else:
-        print("\n" + "no matching words found.")
+        print("\n" + "no matching words found")
+        print("----------------------------")
 
 def input(word):
     word = list(word.upper())
@@ -230,11 +255,15 @@ calc_set(*input("daergenle"))
 print("word 16")
 calc_set(*input("fundheutert"))
 print("word 17")
-calc_set(*input("krechsaftweg"))
+print("toohard")
+print("-------------------------")
+#calc_set(*input("krechsaftweg"))
 print("word 18")
 calc_set(*input("knechges"))
 print("word 19")
-calc_set(*input("sunnebohbton"))
+#calc_set(*input("sunnebohbton"))
+print("toohard")
+print("-------------------------")
 print("word 20")
 calc_set(*input("helgusteil"))
 print("word 21")
