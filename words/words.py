@@ -74,7 +74,7 @@ def calc(a, b, c, d, e='', f='', g='', h='', i='', j='', k='', l=''):
     else:
         print("\n" + "no matching words found.")
 
-##-------------------------------------------------------
+# -------------------------------------------------------
 
 def calc_fast(a, b, c, d, e='', f='', g='', h='', i='', j='', k='', l=''):
     word = [a, b, c, d]
@@ -117,7 +117,7 @@ def calc_fast(a, b, c, d, e='', f='', g='', h='', i='', j='', k='', l=''):
     else:
         print("\n" + "no matching words found.")
 
-##----------------------------------------------------------------
+# ----------------------------------------------------------------
 
 def calc_np(a, b, c, d, e='', f='', g='', h='', i='', j='', k='', l=''):
     word = [a, b, c, d]
@@ -160,7 +160,9 @@ def calc_np(a, b, c, d, e='', f='', g='', h='', i='', j='', k='', l=''):
     else:
         print("\n" + "no matching words found.")
 
-##----------------------------------------------------------------
+# ----------------------------------------------------------------
+# fastest working function
+# ----------------------------------------------------------------
 
 def calc_set(a, b, c, d, e='', f='', g='', h='', i='', j='', k='', l=''):
     word = [a, b, c, d]
@@ -218,9 +220,9 @@ def input(word):
         word.append('')
     return word[0], word[1], word[2], word[3], word[4], word[5], word[6], word[7], word[8], word[9], word[10], word[11]
 
-##-------------------------------------------------------
-##=======================================================
-##-------------------------------------------------------
+# -------------------------------------------------------
+# =======================================================
+# -------------------------------------------------------
 
 def perms(s):
     if(len(s)==1): return [s]
@@ -229,9 +231,9 @@ def perms(s):
         result += [v+p for p in perms(s[:i]+s[i+1:])]
     return result
 
-##-------------------------------------------------------
-##=======================================================
-##-------------------------------------------------------
+# -------------------------------------------------------
+# =======================================================
+# -------------------------------------------------------
 
 def calc_np_multiset(a, b, c, d, e='', f='', g='', h='', i='', j='', k='', l=''):
     word = [a, b, c, d]
@@ -288,61 +290,85 @@ def input(word):
         word.append('')
     return word[0], word[1], word[2], word[3], word[4], word[5], word[6], word[7], word[8], word[9], word[10], word[11]
 
-##-------------------------------------------------------
-##=======================================================
-##-------------------------------------------------------
+# -------------------------------------------------------
+# =======================================================
+# -------------------------------------------------------
 
 start = time.time()
 print("word 1")
+print("freenst")
 calc_set(*input("freenst"))
 print("word 2")
+print("treiten")
 calc_set(*input("treiten"))
 print("word 3")
+print("adinost")
 calc_set(*input("adinost"))
 print("word 4")
+print("addikant")
 calc_set(*input("addikant"))
 print("word 5")
+print("prionator")
 calc_set(*input("prionator"))
 print("word 6")
+print("teotelti")
 calc_set(*input("teotelti"))
 print("word 7")
+print("grereist")
 calc_set(*input("grereist"))
 print("word 8")
+print("halzgnu")
 calc_set(*input("halzgnu"))
 print("word 9")
+print("keidroma")
 calc_set(*input("keidroma"))
 print("word 10")
+print("wandkreh")
 calc_set(*input("wandkreh"))
 print("word 11")
+print("rindteig")
 calc_set(*input("rindteig"))
 print("word 12")
+print("pechobrot")
 calc_set(*input("pechobrot"))
 print("word 13")
+print("strinkdich")
 calc_set(*input("strinkdich"))
 print("word 14")
+print("nachemtritt")
 calc_set(*input("nachemtritt"))
 print("word 15")
+print("daergenle")
 calc_set(*input("daergenle"))
 print("word 16")
+print("fundheutert")
 calc_set(*input("fundheutert"))
-#print("word 17")
-#print("toohard")
-#print("-------------------------")
-#calc_np_multiset(*input("krechsaftweg"))
+# print("word 17")
+# print("krechsaftweg")
+# print("toohard")
+# print("-------------------------")
+# calc_np_multiset(*input("krechsaftweg"))
 print("word 18")
+print("knechges")
 calc_set(*input("knechges"))
-#print("word 19")
-#calc_set(*input("sunnebohbton"))
-#print("toohard")
-#print("-------------------------")
+# print("word 19")
+# print("sunnebohbton")
+# calc_set(*input("sunnebohbton"))
+# print("toohard")
+# print("-------------------------")
 print("word 20")
+print("helgusteil")
 calc_set(*input("helgusteil"))
 print("word 21")
+print("sachpinsem")
 calc_set(*input("sachpinsem"))
 print("word 22")
+print("amorkeid")
 calc_set(*input("amorkeid"))
 print("word 23")
+print("freinzieger")
 calc_set(*input("freinzieger"))
 print("word 24")
+print("bananenmut")
 calc_set(*input("bananenmut"))
 print(time.time() - start)
